@@ -1,4 +1,8 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
+import {Marca} from './marca.model';
+import {Categoria} from './categoria.model';
+import {Foto} from './foto.model';
+import {Proveedor} from './proveedor.model';
 
 @model()
 export class ProductoOServicio extends Entity {
@@ -27,7 +31,17 @@ export class ProductoOServicio extends Entity {
   })
   estado: string;
 
+  @belongsTo(() => Marca, {name: 'tiene_marca'})
+  idmarca: string;
 
+  @belongsTo(() => Categoria, {name: 'tiene_categoria'})
+  idcategoria: string;
+
+  @hasMany(() => Foto)
+  fotos: Foto[];
+
+  @belongsTo(() => Proveedor, {name: 'idproveedo'})
+  idproveedor: string;
 
   constructor(data?: Partial<ProductoOServicio>) {
     super(data);
