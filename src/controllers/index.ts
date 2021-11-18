@@ -5,3 +5,8 @@ export * from './producto-o-servicio-foto.controller';
 export * from './marca-producto-o-servicio.controller';
 export * from './producto-o-servicio-proveedor.controller';
 export * from './proveedor-producto-o-servicio.controller';
+export * from './marca.controller';
+export * from './categoria.controller';
+export * from './proveedor.controller';
+export * from './foto.controller';
+export * from './productososervicios.controller';
