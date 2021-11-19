@@ -27,6 +27,10 @@ export class Factura extends Entity {
   })
   percioventa: number;
 
+  @property({
+    type: 'string',
+  })
+  idventas?: string;
 
   constructor(data?: Partial<Factura>) {
     super(data);
